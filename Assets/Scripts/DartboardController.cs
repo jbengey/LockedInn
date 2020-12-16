@@ -5,7 +5,7 @@ using System;
 
 public class DartboardController : MonoBehaviour
 {
-    public Transform centre;
+    public Transform centre; //reference to centre of dartboard gameobject
     public int playerScore = 0;
 
 
@@ -23,6 +23,7 @@ public class DartboardController : MonoBehaviour
 
     private int CalculateScore(Vector3 CollisionPoint)
     {
+        //local variable declaration
         int dartMultiplier;
         int calculatedScore;
         float dartDistance, dartDistanceX, dartDistanceY;
@@ -33,36 +34,40 @@ public class DartboardController : MonoBehaviour
         dartDistanceY = CollisionPoint.y - centre.position.y ; //Y direction of dart
         dartAngle = Math.Atan2(dartDistanceY,dartDistanceX); //Trig to caluclate angle of dart relative to centre, in radians
         dartAngle = dartAngle * 180 / Math.PI; //convert radians to degrees
+        
 
         //Check for bull 50 and 25
-        if (dartDistance < 0.00034f)
+        if (dartDistance < 0.0302680f)
         {
             calculatedScore = 50; //Bullseye!
         }
-        else if (dartDistance > 0.00033f && dartDistance < 0.00066f)
+        else if (dartDistance >= 0.0302680f && dartDistance < 0.0706981f)
         {
             calculatedScore = 25; //Bull!
         }
         else
         {
-            //// Detection based on distance (Score multiplier)
-            //if (55.7f > dartDistance && dartDistance < 61.4f)
-            //{
-            //    //Inner triple ring
-            //    dartMultiplier = 3;
-            //}
-            //else if (92.2f > dartDistance && dartDistance < 98.0f)
-            //{
-            //    //Outer double ring
-            //    dartMultiplier = 2;
-            //}
-            //else
-            //{
-            //    //Normal area - single scores
+            // Detection based on distance (Score multiplier)
+            if ( dartDistance > 0.4357793f && dartDistance < 0.4637211f)
+            {
+                //Inner triple ring
+                dartMultiplier = 3;
+            }
+            else if (dartDistance> 0.7226701f && dartDistance < 0.7645695f)
+            {
+                //Outer double ring
+                dartMultiplier = 2;
+            }
+            else if (dartDistance > 0.7645695f)
+            {
+                //Out of bounds (miss)
+                dartMultiplier = 0;
+            }
+            else
+            {
+                //Normal area - single scores
                 dartMultiplier = 1;
-            //}
-            //Debug.Log(dartMultiplier);
-
+            }
 
             //Detection based on angle (Hit score number)
             int hitNumber = dartAngle < 9 ? 6

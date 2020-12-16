@@ -12,8 +12,14 @@ public class DartController : MonoBehaviour
         {
             Rigidbody dartRB = this.gameObject.GetComponent<Rigidbody>(); //reference to the dart rigidbody
             dartRB.constraints = RigidbodyConstraints.FreezeAll; //freeze dart - getting it stuck in whatever it has hit
+
         }
     }
+
+    //Possible force needed on throw of dart?
+
+    //Possible need to shade dart with overlay to display the fact it is interactable
+
 
 
 
