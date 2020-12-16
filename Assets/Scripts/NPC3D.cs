@@ -12,8 +12,8 @@ public class NPC3D : MonoBehaviour
     DialogueRunner dialogueRunner; //refernce to the dialogue control
     private GameObject dialogueCanavas; //refernce to the canvas
     public GameObject NPC;                                              //GameObject of Keeper
-    private Vector3 PostionSpeechBubble = new Vector3(0f, 2.3f, 0f);
-    private Vector3 ResetSpeechBubble = new Vector3(0f, -0.8f, 0f);     //Vector3 to reset canvas location 
+    private Vector3 PostionSpeechBubble = new Vector3(0f, 1.25f, 0f);
+    private Vector3 ResetSpeechBubble = new Vector3(0f, -5f, 0f);     //Vector3 to reset canvas location 
     private Vector3 NPCRoatation;                                       //Vector3 for the Keeper roation
 
     // Start is called before the first frame update
@@ -37,7 +37,7 @@ public class NPC3D : MonoBehaviour
     {
 
           var angleX = NPC.transform.eulerAngles.x;                  //finds and sets to variable Keeper x rotation
-          var angleY = NPC.transform.eulerAngles.y - 180;            //finds and sets to variable Keeper y rotation, - 180 so is correct
+          var angleY = NPC.transform.eulerAngles.y - 180f;            //finds and sets to variable Keeper y rotation, - 180 so is correct
           var angleZ = NPC.transform.eulerAngles.z;                  //finds and sets to variable keeper z rotation
           NPCRoatation = new Vector3(angleX, angleY, angleZ);        //sets Vector3 to current Keeper rotation
     }
@@ -51,7 +51,7 @@ public class NPC3D : MonoBehaviour
             {
                 if (dialogueCanavas != null)
                 {
-                    Debug.Log("Triggererd");
+                    //Debug.Log("Triggererd");
                     //move the Canvas to the object and off set
                     dialogueCanavas.transform.SetParent(transform.parent.transform); // use the root to prevent scaling
                     dialogueCanavas.GetComponent<RectTransform>().anchoredPosition3D = transform.parent.TransformVector(PostionSpeechBubble);
@@ -64,7 +64,6 @@ public class NPC3D : MonoBehaviour
                 {
                     dialogueRunner.Stop();
                 }
-                Debug.Log("start dialogue");
                 dialogueRunner.StartDialogue(talkToNode);
             }
         }
