@@ -7,6 +7,30 @@ public class DartboardController : MonoBehaviour
 {
     public Transform centre; //reference to centre of dartboard gameobject
     public int playerScore = 0;
+    public int dartsThrown = 0;
+    public Transform dartHome;
+    public TMPro.TMP_Text ScoreUI;
+
+    private void Update()
+    {
+        if (dartsThrown ==3)
+        {
+            StartCoroutine(RemoveAllDarts());
+        }
+    }
+
+
+    IEnumerator RemoveAllDarts()
+    {
+        GameObject[] darts = GameObject.FindGameObjectsWithTag("Dart"); //Array of all active darts
+        yield return new WaitForSeconds(2);
+
+        foreach (var d in darts)
+        {
+            //Move all darts back to home location
+            d.transform.position = dartHome.position;
+        }
+    }
 
 
     private void OnCollisionEnter(Collision other)
@@ -17,6 +41,7 @@ public class DartboardController : MonoBehaviour
         {
             Vector3 collisionPoint = other.contacts[0].point; //reference to the exact point of the collider that hit the dartboard
             playerScore += CalculateScore(collisionPoint);
+            ScoreUI.text = playerScore.ToString();
         }
     }
 
@@ -34,31 +59,37 @@ public class DartboardController : MonoBehaviour
         dartDistanceY = CollisionPoint.y - centre.position.y ; //Y direction of dart
         dartAngle = Math.Atan2(dartDistanceY,dartDistanceX); //Trig to caluclate angle of dart relative to centre, in radians
         dartAngle = dartAngle * 180 / Math.PI; //convert radians to degrees
-        
+        //Debug.Log(dartDistance);
+
+        if (dartAngle <0)
+        {
+            dartAngle += 360;
+        }
+
 
         //Check for bull 50 and 25
-        if (dartDistance < 0.0302680f)
+        if (dartDistance < 0.00753173f)
         {
             calculatedScore = 50; //Bullseye!
         }
-        else if (dartDistance >= 0.0302680f && dartDistance < 0.0706981f)
+        else if (dartDistance >= 0.00753173f && dartDistance < 0.01671828f)
         {
             calculatedScore = 25; //Bull!
         }
         else
         {
             // Detection based on distance (Score multiplier)
-            if ( dartDistance > 0.4357793f && dartDistance < 0.4637211f)
+            if ( dartDistance > 0.107209f && dartDistance < 0.1174087f)
             {
                 //Inner triple ring
                 dartMultiplier = 3;
             }
-            else if (dartDistance> 0.7226701f && dartDistance < 0.7645695f)
+            else if (dartDistance> 0.1756638f && dartDistance < 0.1895082f)
             {
                 //Outer double ring
                 dartMultiplier = 2;
             }
-            else if (dartDistance > 0.7645695f)
+            else if (dartDistance >= 0.1895082f)
             {
                 //Out of bounds (miss)
                 dartMultiplier = 0;
@@ -69,6 +100,7 @@ public class DartboardController : MonoBehaviour
                 dartMultiplier = 1;
             }
 
+            
             //Detection based on angle (Hit score number)
             int hitNumber = dartAngle < 9 ? 6
                           : dartAngle > 9 && dartAngle < 27 ? 13
