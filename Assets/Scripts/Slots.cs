@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Slots : MonoBehaviour
 {
+    public Reel reel1, reel2, reel3;
     public Reel[] reel;
-    bool startSpin;
+    private bool startSpin;           //controls when to spin
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,9 +41,22 @@ public class Slots : MonoBehaviour
             reel[i].spin = false;
             reel[i].RandomPosition();
         }
-
+        WinChecker();
         startSpin = false;
 
     }
 
+    void WinChecker()
+    {
+        Debug.Log(reel1.middleColour + reel2.middleColour + reel3.middleColour);
+
+        if(reel1.middleColour == reel2.middleColour && reel2.middleColour == reel3.middleColour)
+        {
+            Debug.Log("BIG WIN");
+        }
+        else
+        {
+            Debug.Log("Try Again");
+        }
+    }
 }
