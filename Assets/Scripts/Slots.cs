@@ -35,7 +35,7 @@ public class Slots : MonoBehaviour
 
         for (int i = 0; i < reel.Length; i++)
         {
-            yield return new WaitForSeconds(Random.Range(1, 3));
+            yield return new WaitForSeconds(Random.Range(1, 2));
             reel[i].spin = false;
             reel[i].RandomPosition();
         }
