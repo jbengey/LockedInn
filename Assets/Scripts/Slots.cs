@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Slots : MonoBehaviour
 {
+    public FMButton button;
     public Reel reel1, reel2, reel3;
     public Reel[] reel;
     private bool startSpin;           //controls when to spin
+    public TMPro.TMP_Text playerMessage;
 
 
     // Start is called before the first frame update
     void Start()
     {
         startSpin = false;
+        playerMessage.text = "";
+
     }
 
     // Update is called once per frame
@@ -20,10 +24,11 @@ public class Slots : MonoBehaviour
     {
         if (!startSpin)
         {
-            if (Input.GetKeyDown(KeyCode.K))
+            if (button.buttonPressed == true)
             {
                 startSpin = true;
                 StartCoroutine(Spinning());
+                playerMessage.text = "";
             }
         }
     }
@@ -50,13 +55,15 @@ public class Slots : MonoBehaviour
     {
         Debug.Log(reel1.middleColour + reel2.middleColour + reel3.middleColour);
 
-        if(reel1.middleColour == reel2.middleColour && reel2.middleColour == reel3.middleColour)
+        if(reel1.middleColour == reel2.middleColour && reel2.middleColour == reel3.middleColour && reel1.middleColour == reel3.middleColour)
         {
             Debug.Log("BIG WIN");
+            playerMessage.text = "Big Win!!";
         }
         else
         {
             Debug.Log("Try Again");
+            playerMessage.text = "Try Again!!";
         }
     }
 }
