@@ -49,9 +49,9 @@ public class BasicAIController : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         RotateTowards(player);
-        if (Vector3.Distance(NPCMesh.destination, NPCMesh.transform.position) <= 3.0f)        //compares NMA location with target and if distance is less then or equal to 4....
+        if (Vector3.Distance(NPCMesh.destination, NPCMesh.transform.position) <= 4.0f)        //compares NMA location with target and if distance is less then or equal to 4....
         {
-         //   NPCMesh.isStopped = true;                                                            //change NMA to isStopped, makes sure NPC doesn't get too close
+           NPCMesh.isStopped = true;                                                            //change NMA to isStopped, makes sure NPC doesn't get too close
         }
     }
 

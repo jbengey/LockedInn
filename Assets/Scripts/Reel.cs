@@ -42,12 +42,12 @@ public class Reel : MonoBehaviour
         //List<int> middlePart = new List<int>();
         List<float> parts = new List<float>();
 
-        parts.Add(1);
-        parts.Add(0.5f);
+        parts.Add(0.25f);
+        parts.Add(0.125f);
         parts.Add(0);
-        parts.Add(-0.5f);
-        parts.Add(-1);
-        parts.Add(-1.5f);
+        parts.Add(-0.125f);
+        parts.Add(-0.25f);
+        parts.Add(-0.375f);
 
 
         foreach (Transform image in transform)
