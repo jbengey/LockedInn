@@ -9,15 +9,15 @@ public class Reel : MonoBehaviour
     public GameObject winLine;
     private Vector3 middlePosition;
     public string middleColour;
+    public float spinPosition;
      
 
     // Start is called before the first frame update
     void Start()
     {
         spin = false;
-        speed = 15;
-        //   middlePosition = RectTransform(0, 0, 0);
-   
+        speed = 35;
+        spinPosition = 2;   
     }
 
     // Update is called once per frame
@@ -31,7 +31,7 @@ public class Reel : MonoBehaviour
 
                 if (image.transform.position.y <= 0)
                 {
-                    image.transform.position = new Vector3(image.position.x, image.transform.position.y + 600, image.position.z);
+                    image.transform.position = new Vector3(image.position.x, image.transform.position.y + spinPosition, image.position.z);
                 }
             }
         }
@@ -39,7 +39,6 @@ public class Reel : MonoBehaviour
 
     public void RandomPosition()
     {
-        //List<int> middlePart = new List<int>();
         List<float> parts = new List<float>();
 
         parts.Add(0.25f);
@@ -60,7 +59,6 @@ public class Reel : MonoBehaviour
 
             if (image.position == middlePosition)
             {               
-               // Debug.Log(image.name);
                 middleColour = image.name;
             }
 

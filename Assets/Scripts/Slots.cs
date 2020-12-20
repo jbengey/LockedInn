@@ -16,7 +16,6 @@ public class Slots : MonoBehaviour
     {
         startSpin = false;
         playerMessage.text = "";
-
     }
 
     // Update is called once per frame
