@@ -10,12 +10,12 @@ public class BasicAIController : MonoBehaviour
     public Transform target1, target2, player;             //sets up targets for navmeshagent
     public NavMeshAgent NPCMesh;                           //defines NavMeshAgent (NMA)
     private bool playerIsHere;                             //creates bool
-    public float rotationSpeed = 12f;
+    public float rotationSpeed = 15f;
 
     private void Start()
     {
-        NPCMesh.SetDestination(target1.position);            //sets initial target for NMA
-        NPCMesh.speed = 0.75f;                               //defines speed for NMA
+        NPCMesh.SetDestination(target2.position);            //sets initial target for NMA
+        NPCMesh.speed = 1;                               //defines speed for NMA
     }
 
     // Update is called once per frame
@@ -26,11 +26,11 @@ public class BasicAIController : MonoBehaviour
             RotateTowards(player);
         }
 
-        if (Vector3.Distance(NPCMesh.destination, NPCMesh.transform.position) <= 1.0f && playerIsHere == false)            //compares NMA location and target location, and if less than or equal to 1 distance away AND bool is false...
+        if (Vector3.Distance(NPCMesh.destination, NPCMesh.transform.position) <= 0.5f && playerIsHere == false)            //compares NMA location and target location, and if less than or equal to 1 distance away AND bool is false...
         {
             NPCMesh.SetDestination(target2.position);                                                                        //change to target2
 
-            if (Vector3.Distance(NPCMesh.destination, NPCMesh.transform.position) <= 1.0f && playerIsHere == false)       //compares NMA location and target location, and if less than or equal to 1 distance away AND bool is false...
+            if (Vector3.Distance(NPCMesh.destination, NPCMesh.transform.position) <= 0.5f && playerIsHere == false)       //compares NMA location and target location, and if less than or equal to 1 distance away AND bool is false...
             {
                 NPCMesh.SetDestination(target1.position);                                                                    //change to target1
             }
