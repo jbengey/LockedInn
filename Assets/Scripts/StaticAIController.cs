@@ -6,73 +6,65 @@ using UnityEngine.AI;
 
 public class StaticAIController : MonoBehaviour
 {
-    public Animator NPCAni;                                //defines animator
-    public Transform player;                        //sets up targets for navmeshagent
-    public NavMeshAgent NPCMesh;                           //defines NavMeshAgent (NMA)
-    private bool playerIsHere;                             //creates bool
-    public float distance;
+    public Animator NPCAni;                 //defines animator
+    public Transform player;                //sets up targets for navmeshagent
+    public NavMeshAgent NPCMesh;            //defines NavMeshAgent (NMA)
+    private bool playerIsHere, turnBack;    //creates bool
+    public float turnSpeed;                 //creates public float 
+    private Quaternion originalAngle;
+
 
     private void Start()
     {
-     //   NPCMesh.SetDestination(target2.position);            //sets initial target for NMA
-     //   NPCMesh.speed = 1;                               //defines speed for NMA
+        turnSpeed = 1f;                                     //sets turnspeed float
+        originalAngle = NPCMesh.transform.rotation;
     }
 
-    // Update is called once per frame
-    void Update()
+// Update is called once per frame
+void Update()
     {
-        distance = Vector3.Distance(transform.position, player.position);
-
-        if (playerIsHere)
+        if (playerIsHere)                   //if this is true...
         {
-            RotateTowards();
+            RotateTowardsPlayer();          //calls this function
         }
-
-        //if (Vector3.Distance(NPCMesh.destination, NPCMesh.transform.position) <= 0.5f && playerIsHere == false)            //compares NMA location and target location, and if less than or equal to 1 distance away AND bool is false...
-        //{
-        //    NPCMesh.SetDestination(target2.position);                                                                        //change to target2
-
-        //    if (Vector3.Distance(NPCMesh.destination, NPCMesh.transform.position) <= 0.5f && playerIsHere == false)       //compares NMA location and target location, and if less than or equal to 1 distance away AND bool is false...
-        //    {
-        //        NPCMesh.SetDestination(target1.position);                                                                    //change to target1
-        //    }
-        //}
+        if (turnBack)                       //if this is true...
+        {
+            TurnBack();                     //call this function
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        RotateTowards();
-        //NPCMesh.SetDestination(player.position);             //sets NMA target to player location
-        playerIsHere = true;                                    //changes bool to true
-        NPCAni.SetBool("PlayerIsHere", true);                //changes animator bool to true, starting transition
+        playerIsHere = true;                            //changes bool to true
+        RotateTowardsPlayer();                          //calls this function
+        NPCAni.SetBool("PlayerIsHere", true);           //changes animator bool to true
     }
 
     private void OnTriggerStay(Collider other)
     {
-        RotateTowards();
-        //if (Vector3.Distance(NPCMesh.destination, NPCMesh.transform.position) <= 4.0f)        //compares NMA location with target and if distance is less then or equal to 4....
-        //{
-        //   NPCMesh.isStopped = true;                                                            //change NMA to isStopped, makes sure NPC doesn't get too close
-        //}
+
     }
 
     private void OnTriggerExit(Collider other)
     {
-        //NPCMesh.isStopped = false;                           //sets bool back to false on exit, allowing NMA to move again
-        //NPCMesh.SetDestination(target2.position);            //sets new target for NMA
-        playerIsHere = false;                                   //sets bool to false
-        NPCAni.SetBool("PlayerIsHere", false);               //sets animator bool to false, starting new animation        
+        playerIsHere = false;                           //sets bool to false
+        NPCAni.SetBool("PlayerIsHere", false);          //sets animator bool to false, starting new animation   
+        turnBack = true;                                //sets 
     }
 
-    private void RotateTowards()
+    private void RotateTowardsPlayer()
     {
-        //get difference of the rotation of the player and gameObjects position
-        Vector3 direction = (player.position - transform.position).normalized;
+        Vector3 direction = (player.position - transform.position).normalized;                                          //get difference of the rotation of the player and gameObjects position
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));                    //set lookRotation to the x and y of the player
+        NPCMesh.transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed);    //apply rotation
+    }
 
-        //set lookRotation to the x and y of the player
-        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-
-        //apply rotation
-        NPCMesh.transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 3);
+    private void TurnBack()
+    {
+        NPCMesh.transform.rotation = Quaternion.Slerp(transform.rotation, originalAngle, Time.deltaTime * turnSpeed);           
+        if(NPCMesh.transform.rotation == originalAngle)
+        {
+            turnBack = false;
+        }
     }
 }

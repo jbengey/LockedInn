@@ -51,7 +51,6 @@ public class NPC3D : MonoBehaviour
             {
                 if (dialogueCanavas != null)
                 {
-                    //Debug.Log("Triggererd");
                     //move the Canvas to the object and off set
                     dialogueCanavas.transform.SetParent(transform.parent.transform); // use the root to prevent scaling
                     dialogueCanavas.GetComponent<RectTransform>().anchoredPosition3D = transform.parent.TransformVector(PostionSpeechBubble);
