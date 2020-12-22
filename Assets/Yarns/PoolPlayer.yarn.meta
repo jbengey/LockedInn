@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 68f3001c138fb224ab71ceb17602ffc8
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-GB
+  stringIDs:
+  - PoolPlayer-PoolPlayer.Start-0
+  - PoolPlayer-PoolPlayer.Start-1
+  - PoolPlayer-PoolPlayer.Start-2
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: 68f3001c138fb224ab71ceb17602ffc8,
+    type: 3}
+  localizations: []

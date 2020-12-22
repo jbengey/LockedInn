@@ -10,7 +10,7 @@ public class BasicAIController : MonoBehaviour
     public Transform target1, target2, player;             //sets up targets for navmeshagent
     public NavMeshAgent NPCMesh;                           //defines NavMeshAgent (NMA)
     private bool playerIsHere;                             //creates bool
-    public float rotationSpeed = 15f;
+    public float rotationSpeed = 15f, distance;
 
     private void Start()
     {
@@ -21,9 +21,11 @@ public class BasicAIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        distance = Vector3.Distance(transform.position, player.position);
+
         if (playerIsHere)
         {
-            RotateTowards(player);
+            RotateTowards();
         }
 
         if (Vector3.Distance(NPCMesh.destination, NPCMesh.transform.position) <= 0.5f && playerIsHere == false)            //compares NMA location and target location, and if less than or equal to 1 distance away AND bool is false...
@@ -39,8 +41,6 @@ public class BasicAIController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        RotateTowards(player);
-        //Debug.Log("collision detected");                      //debug to confirm trigger working
         NPCMesh.SetDestination(player.position);             //sets NMA target to player location
         playerIsHere = true;                                    //changes bool to true
         NPCAni.SetBool("PlayerIsHere", true);                //changes animator bool to true, starting transition
@@ -48,7 +48,7 @@ public class BasicAIController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        RotateTowards(player);
+        RotateTowards();
         if (Vector3.Distance(NPCMesh.destination, NPCMesh.transform.position) <= 4.0f)        //compares NMA location with target and if distance is less then or equal to 4....
         {
            NPCMesh.isStopped = true;                                                            //change NMA to isStopped, makes sure NPC doesn't get too close
@@ -63,10 +63,15 @@ public class BasicAIController : MonoBehaviour
         NPCAni.SetBool("PlayerIsHere", false);               //sets animator bool to false, starting new animation        
     }
 
-    private void RotateTowards(Transform target)
+    private void RotateTowards()
     {
-        Vector3 direction = (target.position - transform.position).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));    // flattens the vector3
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
+        //get difference of the rotation of the player and gameObjects position
+        Vector3 direction = (player.position - transform.position).normalized;
+
+        //set lookRotation to the x and y of the player
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+
+        //apply rotation
+        NPCMesh.transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 3);
     }
 }
