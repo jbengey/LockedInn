@@ -11,13 +11,13 @@ public class StaticAIController : MonoBehaviour
     public NavMeshAgent NPCMesh;            //defines NavMeshAgent (NMA)
     private bool playerIsHere, turnBack;    //creates bool
     public float turnSpeed;                 //creates public float 
-    private Quaternion originalAngle;
+    private Quaternion originalAngle;       //creates Quaternion for stornig rotation values
 
 
     private void Start()
     {
         turnSpeed = 1f;                                     //sets turnspeed float
-        originalAngle = NPCMesh.transform.rotation;
+        originalAngle = NPCMesh.transform.rotation;         //sets Quaternion to NMA rotation
     }
 
 // Update is called once per frame
@@ -42,14 +42,14 @@ void Update()
 
     private void OnTriggerStay(Collider other)
     {
-
+        RotateTowardsPlayer();                          //ensures function still applies whilst staying within trigger
     }
 
     private void OnTriggerExit(Collider other)
     {
         playerIsHere = false;                           //sets bool to false
         NPCAni.SetBool("PlayerIsHere", false);          //sets animator bool to false, starting new animation   
-        turnBack = true;                                //sets 
+        turnBack = true;                                //sets bool to true
     }
 
     private void RotateTowardsPlayer()
@@ -61,10 +61,10 @@ void Update()
 
     private void TurnBack()
     {
-        NPCMesh.transform.rotation = Quaternion.Slerp(transform.rotation, originalAngle, Time.deltaTime * turnSpeed);           
-        if(NPCMesh.transform.rotation == originalAngle)
+        NPCMesh.transform.rotation = Quaternion.Slerp(transform.rotation, originalAngle, Time.deltaTime * turnSpeed);   //sets NMA rotation back to the original value        
+        if(NPCMesh.transform.rotation == originalAngle)                                                                 //if the NMA rotation equals the original rotation...    
         {
-            turnBack = false;
+            turnBack = false;                                                                                           //set this to false
         }
     }
 }
