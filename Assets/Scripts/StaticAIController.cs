@@ -61,6 +61,7 @@ void Update()
 
     private void TurnBack()
     {
+
         NPCMesh.transform.rotation = Quaternion.Slerp(transform.rotation, originalAngle, Time.deltaTime * turnSpeed);   //sets NMA rotation back to the original value        
         if(NPCMesh.transform.rotation == originalAngle)                                                                 //if the NMA rotation equals the original rotation...    
         {

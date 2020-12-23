@@ -79,16 +79,19 @@ public class BarKeepAIController : MonoBehaviour
 
     private void RotateTowardsTarget()
     {
-        Vector3 direction = (currentTarget - transform.position).normalized;                                                //get difference of the rotation of the player and gameObjects position
-        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));                        //set lookRotation to the x and y of the player
-        NPCMesh.transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed);        //apply rotation
+        if(playerIsHere == false) 
+        { 
+            Vector3 direction = (currentTarget - transform.position).normalized;                                                //get difference of the rotation of the player and gameObjects position
+            Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));                        //set lookRotation to the x and y of the player
+            NPCMesh.transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed);        //apply rotation
 
-        if (NPCMesh.transform.rotation == lookRotation)         //if the NMA and the lookRotation are equal....
-        {
-            targetRotate = false;                               //set bool to false
+            if (NPCMesh.transform.rotation == lookRotation)         //if the NMA and the lookRotation are equal....
+            {
+                targetRotate = false;                               //set bool to false
+            }
+
+            StopNotNeededAnis();                                    //call this funstion
         }
-
-        StopNotNeededAnis();                                    //call this funstion
     }
 
     void StopNotNeededAnis()
