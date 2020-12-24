@@ -67,7 +67,19 @@ public class BarKeepAIController : MonoBehaviour
         playerIsHere = false;                          //sets bool to false
         NPCAni.SetBool("PlayerIsHere", false);         //sets animator bool to false, starting new animation   
         NPCMesh.isStopped = false;                     //sets bool back to false on exit, allowing NMA to move again
-        NPCMesh.SetDestination(target2.position);      //sets new target for NMA
+
+        if (Vector3.Distance(NPCMesh.destination, NPCMesh.transform.position) <= 0.5f && playerIsHere == false)         //compares NMA location and target location, and if less than or equal to 1 distance away AND bool is false...
+        {
+            StartCoroutine(WaitAtEnd());                                                                                //call this co routine
+            NPCMesh.SetDestination(target1.position);                                                                   //change to target1
+
+
+            if (Vector3.Distance(NPCMesh.destination, NPCMesh.transform.position) <= 0.5f && playerIsHere == false)     //compares NMA location and target location, and if less than or equal to 1 distance away AND bool is false...
+            {
+                StartCoroutine(WaitAtEnd());                                                                            //call this co routine
+                NPCMesh.SetDestination(target2.position);                                                               //change to target2
+            }
+        }
     }
 
     private void RotateTowardsPlayer()
@@ -110,11 +122,11 @@ public class BarKeepAIController : MonoBehaviour
         yield return new WaitForSeconds(wait_time);                                     //waits for a number of seconds from the range of integers set
         if (Vector3.Distance(NPCMesh.destination, target1.transform.position) <= 1f)    //if NMA is within 1f of target1...
         {
-            NPCAni.SetBool("TurnRight", true);                                          //set this animator bool to true
+            NPCAni.SetBool("TurnLeft", true);                                          //set this animator bool to true
         }
         if (Vector3.Distance(NPCMesh.destination, target2.transform.position) <= 1f)    //if NMA is within 1f of target2....
         {
-            NPCAni.SetBool("TurnLeft", true);                                           //set this animator bool to true
+            NPCAni.SetBool("TurnRight", true);                                           //set this animator bool to true
         }
         targetRotate = true;                                                            //sets bool to true
         NPCMesh.isStopped = false;                                                      //sets this bool/internal function to true
