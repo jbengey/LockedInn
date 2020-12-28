@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Destructible : MonoBehaviour
 {
@@ -8,15 +10,35 @@ public class Destructible : MonoBehaviour
     public float timeToDespawn = 0.0f;
     public float velocityNeededToBreak = 0.5f;
 
+    XRGrabInteractable grabInteractable;
     GameObject instanciated;
 
 
+    private void Awake()
+    {
+        try
+        {
+            //try get grab interacble if exists
+            grabInteractable = GetComponent<XRGrabInteractable>();
+        }
+        catch
+        {
+            return;
+        }
+
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (destroyedObject == null) Debug.LogError("Destructible scirpt has no destoryed object provided", this);
+        if (destroyedObject == null) Debug.LogError("Destructible scirpt has no destroyed object provided", this);
         if (destroyedObject != null && collision.relativeVelocity.magnitude > velocityNeededToBreak)
         {
+            if (grabInteractable != null)
+            {
+                Destroy(grabInteractable); //remove interactor to avoid update errors
+            }
+
+
             //Hide - needs to be hidden so script still runs
             Destroy(originalModel);
 

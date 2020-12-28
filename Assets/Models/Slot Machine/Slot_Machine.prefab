@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 740000445109408270}
   - component: {fileID: 4461618000150109611}
   - component: {fileID: 1877489391006345569}
+  - component: {fileID: 8463949954354582365}
   m_Layer: 0
   m_Name: Slot_Machine
   m_TagString: Untagged
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &8463949954354582365
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76230066363746484}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.19644642, y: 0.25590548, z: 0.61023617}
+  m_Center: {x: -0.09822319, y: 0.12795275, z: 0.30511808}

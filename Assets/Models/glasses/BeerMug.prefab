@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5543473446138389977}
   - component: {fileID: 1539245973734036550}
   - component: {fileID: 8102980375760416514}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BeerMug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &1539245973734036550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -126,8 +126,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   m_ThrowVelocityScale: 1.5
   m_ThrowAngularVelocityScale: 1
-  m_GravityOnDetach: 0
-  m_RetainTransformParent: 1
+  m_GravityOnDetach: 1
+  m_RetainTransformParent: 0
 --- !u!114 &8102980375760416514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,8 +143,8 @@ MonoBehaviour:
   originalModel: {fileID: 3355503574805273953}
   destroyedObject: {fileID: 3690081371081723903, guid: 324131f31f9e1334f85a2091e6601db4,
     type: 3}
-  timeToDespawn: 2.5
-  velocityNeededToBreak: 0.5
+  timeToDespawn: 4
+  velocityNeededToBreak: 4
 --- !u!64 &499270906476423731
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -168,7 +168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9129398334357043384}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttachTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3496554256981566423}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0548, z: 0.0838}
+  m_LocalPosition: {x: 0, y: 0.0616, z: 0.0838}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 603851866734385494}
@@ -255,6 +255,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BeerMugModel
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e778efc1d1240454997d4b8bc6677bbd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e778efc1d1240454997d4b8bc6677bbd, type: 3}
