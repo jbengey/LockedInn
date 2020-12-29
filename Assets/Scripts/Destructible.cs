@@ -16,31 +16,23 @@ public class Destructible : MonoBehaviour
 
     private void Awake()
     {
-        try
-        {
-            //try get grab interacble if exists
-            grabInteractable = GetComponent<XRGrabInteractable>();
-        }
-        catch
-        {
-            return;
-        }
+       TryGetComponent(out grabInteractable); //ref to grab iteractor component if exists
 
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (destroyedObject == null) Debug.LogError("Destructible scirpt has no destroyed object provided", this);
-        if (destroyedObject != null && collision.relativeVelocity.magnitude > velocityNeededToBreak)
+
+        if (destroyedObject != null && collision.relativeVelocity.magnitude > velocityNeededToBreak && collision.gameObject.layer != LayerMask.NameToLayer("Grab"))
         {
             if (grabInteractable != null)
             {
                 Destroy(grabInteractable); //remove interactor to avoid update errors
             }
 
-
-            //Hide - needs to be hidden so script still runs
-            Destroy(originalModel);
+            //Destroy(originalModel);
+            originalModel.SetActive(false);
 
             //Instanciate the destroyed model
             instanciated = Instantiate(destroyedObject, transform.position, transform.rotation);
@@ -53,6 +45,8 @@ public class Destructible : MonoBehaviour
 
             //Coroutine to remove shattered object after specified time
             StartCoroutine(DestroyAfterTime(instanciated, timeToDespawn));
+
+
         }
     }
 
