@@ -10,28 +10,31 @@ public class DartboardController : MonoBehaviour
     public int dartsThrown = 0;
     public Transform dartHome;
     public TMPro.TMP_Text ScoreUI;
+    public GameObject[] darts;
 
-    private void Update()
+    //private void Update()
+    //{
+    //    if (dartsThrown ==3)
+    //    {
+    //        StartCoroutine(RemoveAllDarts());
+    //    }
+    //}
+
+    public void ResetScore()
     {
-        if (dartsThrown ==3)
-        {
-            StartCoroutine(RemoveAllDarts());
-        }
+        playerScore = 0;
+        ScoreUI.text = 0.ToString();
     }
 
-
-    IEnumerator RemoveAllDarts()
+    public void RemoveDarts()
     {
-        GameObject[] darts = GameObject.FindGameObjectsWithTag("Dart"); //Array of all active darts
-        yield return new WaitForSeconds(2);
-
         foreach (var d in darts)
         {
-            //Move all darts back to home location
+            d.GetComponent<DartController>().dartRB.velocity = Vector3.zero;
             d.transform.position = dartHome.position;
+            d.transform.rotation = dartHome.rotation;
         }
     }
-
 
     private void OnCollisionEnter(Collision other)
     {
@@ -59,7 +62,7 @@ public class DartboardController : MonoBehaviour
         dartDistanceY = CollisionPoint.y - centre.position.y ; //Y direction of dart
         dartAngle = Math.Atan2(dartDistanceY,dartDistanceX); //Trig to caluclate angle of dart relative to centre, in radians
         dartAngle = dartAngle * 180 / Math.PI; //convert radians to degrees
-        //Debug.Log(dartDistance);
+        
 
         if (dartAngle <0)
         {
@@ -128,6 +131,7 @@ public class DartboardController : MonoBehaviour
             calculatedScore = hitNumber * dartMultiplier;
         }
 
+        Debug.Log("Angle of: " + dartAngle + " Score of: " + calculatedScore);
         return calculatedScore;
     }
 

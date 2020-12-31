@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5320563972495769367}
   - component: {fileID: 7513125813523194147}
-  m_Layer: 0
-  m_Name: TipCollider
+  m_Layer: 8
+  m_Name: Tip
   m_TagString: Dart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484104567269795458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.6453}
+  m_LocalPosition: {x: 0, y: 0, z: -0.1518}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5598876856510044824}
@@ -42,8 +42,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.028803451, y: 0.028018095, z: 0.1259911}
-  m_Center: {x: 0, y: 0, z: 0.6136796}
+  m_Size: {x: 0.017060338, y: 0.01882051, z: 0.1548006}
+  m_Center: {x: 0.00053377607, y: -0.0003286011, z: 0.12878296}
 --- !u!1 &2235391334450034121
 GameObject:
   m_ObjectHideFlags: 0
@@ -53,7 +53,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 901366301483961363}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttachTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,13 +67,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2235391334450034121}
-  m_LocalRotation: {x: -0.69589835, y: -0, z: -0, w: 0.71814036}
-  m_LocalPosition: {x: 0, y: -0, z: 0.345}
+  m_LocalRotation: {x: -0.0048846896, y: 0.69588166, z: 0.7181242, w: 0.004733241}
+  m_LocalPosition: {x: -0.001, y: 0.024, z: 0.359}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5598876856510044824}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -88.198006, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -88.198006, y: 359.22, z: -180.00002}
 --- !u!1 &5598876856510044827
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,9 +89,9 @@ GameObject:
   - component: {fileID: 2652154470109948999}
   - component: {fileID: 7908599119567580238}
   - component: {fileID: 515971970177688860}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dart
-  m_TagString: Untagged
+  m_TagString: Dart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,16 +103,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5598876856510044827}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.46219, y: 0.46219, z: 0.46219}
+  m_LocalScale: {x: 0.10554576, y: 0.10554576, z: 0.10554576}
   m_Children:
   - {fileID: 6739488657251625364}
   - {fileID: 5320563972495769367}
   - {fileID: 901366301483961363}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &5598876856510044825
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -177,7 +177,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
 --- !u!114 &2652154470109948999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +191,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dartBoard: {fileID: 0}
+  dartRB: {fileID: 0}
+  tip: {fileID: 5320563972495769367}
 --- !u!114 &7908599119567580238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,7 +210,7 @@ MonoBehaviour:
   - {fileID: 826299061662322962}
   m_InteractionLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -296,7 +298,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_ThrowVelocityScale: 1.5
+  m_ThrowVelocityScale: 5
   m_ThrowAngularVelocityScale: 1
   m_GravityOnDetach: 1
   m_RetainTransformParent: 1
@@ -406,7 +408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6739488657251625364}
   - component: {fileID: 826299061662322962}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BodyCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -435,8 +437,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6643952691897188731}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.063730374, y: 0.0617391, z: 0.6651656}
-  m_Center: {x: -0.00015276278, y: -0.0010710643, z: 0.34409222}
+  m_Size: {x: 0.063730374, y: 0.0617391, z: 0.5926302}
+  m_Center: {x: -0.00015276333, y: -0.001071064, z: 0.38035992}
