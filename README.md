@@ -5,12 +5,16 @@
 
 ## Website
 This project has an official webpage which contains more of an overview of the pub itself alongside screenshots and gameplay.
-<br>
+<br><br>
 [Visit Locked Inn Website]()
-<br>
-This github readme is intended for any developers and users wishing to fork.
+<br><br>
+This github readme is intended for developers and others wishing to fork.
 
 ## Features
+* Full PBR rendered pub enviroment, classicaly themed with appropriate lighting and assets
+* Throwable glass with realistic shatter effects
+* Interactive NPC's
+* interactable dart board and darts
 
 
 ## Release Information
