@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 193399148935943256}
   - component: {fileID: 7997092157829025654}
   - component: {fileID: 164861425629876789}
+  - component: {fileID: 1189663662630010200}
   m_Layer: 0
   m_Name: Dartboard
   m_TagString: Untagged
@@ -114,11 +115,24 @@ MeshCollider:
   m_GameObject: {fileID: 193399148935943257}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2772122207590355456, guid: d2275517b0279174fa69a413d4a2bfbf, type: 3}
+--- !u!65 &1189663662630010200
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193399148935943257}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.02048695, z: 0.019999998}
+  m_Center: {x: 0, y: 0.00024347613, z: 0}
 --- !u!1 &537226366236163859
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,13 +12,6 @@ public class DartboardController : MonoBehaviour
     public TMPro.TMP_Text ScoreUI;
     public GameObject[] darts;
 
-    //private void Update()
-    //{
-    //    if (dartsThrown ==3)
-    //    {
-    //        StartCoroutine(RemoveAllDarts());
-    //    }
-    //}
 
     public void ResetScore()
     {
@@ -31,6 +24,7 @@ public class DartboardController : MonoBehaviour
         foreach (var d in darts)
         {
             d.GetComponent<DartController>().dartRB.velocity = Vector3.zero;
+            d.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             d.transform.position = dartHome.position;
             d.transform.rotation = dartHome.rotation;
         }
@@ -58,8 +52,8 @@ public class DartboardController : MonoBehaviour
         double dartAngle;
 
         dartDistance = Vector2.Distance(new Vector2(centre.position.x,centre.position.y), new Vector2(CollisionPoint.x, CollisionPoint.y) );    //Calculate distance between dart and the bullseye (centre)
-        dartDistanceX = CollisionPoint.x - centre.position.x ; //x direction of dart
-        dartDistanceY = CollisionPoint.y - centre.position.y ; //Y direction of dart
+        dartDistanceX = centre.position.x - CollisionPoint.x  ; //x direction of dart
+        dartDistanceY =  CollisionPoint.y - centre.position.y ; //Y direction of dart
         dartAngle = Math.Atan2(dartDistanceY,dartDistanceX); //Trig to caluclate angle of dart relative to centre, in radians
         dartAngle = dartAngle * 180 / Math.PI; //convert radians to degrees
         

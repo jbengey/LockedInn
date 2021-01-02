@@ -21,11 +21,13 @@ public class DartController : MonoBehaviour
     //Called when the user throws a dart
     public void DartIsThrown()
     {
-        dartRB.isKinematic = false; //unfreeze rigidbody so can throw
-        dartRB.useGravity = true;
+
         dartBoard.dartsThrown++; //Iterate
         lastPosition = tip.position;
         inAir = true;
+
+        dartRB.isKinematic = false; //unfreeze dart
+        dartRB.useGravity = true;
 
         StartCoroutine(RotateWithVelocity());
 
@@ -34,8 +36,8 @@ public class DartController : MonoBehaviour
     //called when user picks up dart
     public void PickupDart()
     {
-            dartRB.isKinematic = false; //unfreeze rigidbody so can throw
-            dartRB.useGravity = true;
+        dartRB.isKinematic = false; //unfreeze rigidbody so can throw
+        dartRB.useGravity = true;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -43,12 +45,14 @@ public class DartController : MonoBehaviour
         //If colliding with anything that is not a dart
         if (!collision.gameObject.CompareTag("Dart") & collision.gameObject.layer != LayerMask.NameToLayer("Grab") & collision.gameObject.layer != LayerMask.NameToLayer("Body"))
         {
-            dartRB.velocity = Vector3.zero;
-            dartRB.angularVelocity = Vector3.zero;
-            dartRB.isKinematic = true; //freeze dart - getting it stuck in whatever it has hit
-            dartRB.useGravity = false;
             dartHitSound.Play(); //Play dart hit sound
             inAir = false;
+
+            dartRB.velocity = Vector3.zero;
+            dartRB.angularVelocity = Vector3.zero;
+
+            dartRB.isKinematic = true; //freeze dart - getting it stuck in whatever it has hit
+            dartRB.useGravity = false;
         }
     }
 
@@ -73,7 +77,7 @@ public class DartController : MonoBehaviour
         }
     }
 
-
+ 
 
 
 
