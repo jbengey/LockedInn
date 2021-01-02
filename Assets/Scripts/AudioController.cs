@@ -7,6 +7,7 @@ public class AudioController : MonoBehaviour
     public Animator Cust2, Cust3, Cust4;
     public AudioSource Song1, Song2;
     private bool playSong1, playSong2;
+    public GameObject button1, button2, button3;
 
     // Start is called before the first frame update
     void Start()
@@ -56,4 +57,7 @@ public class AudioController : MonoBehaviour
         playSong1 = true;
         playSong2 = false;
     }
+
+
+
 }

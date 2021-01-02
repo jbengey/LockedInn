@@ -12,16 +12,21 @@ public class StaticAIController : MonoBehaviour
     private bool playerIsHere, turnBack;    //creates bool
     public float turnSpeed;                 //creates public float 
     private Quaternion originalAngle;       //creates Quaternion for stornig rotation values
+    //public Transform target;
 
+    Vector3 worldDeltaPosition = Vector3.zero;
 
     private void Start()
     {
         turnSpeed = 1f;                                     //sets turnspeed float
         originalAngle = NPCMesh.transform.rotation;         //sets Quaternion to NMA rotation
+      //  NPCMesh.SetDestination(target.position);
+        //NPCMesh.updatePosition = false;
+
     }
 
-// Update is called once per frame
-void Update()
+    // Update is called once per frame
+    void Update()
     {
         if (playerIsHere)                   //if this is true...
         {
@@ -31,6 +36,13 @@ void Update()
         {
             TurnBack();                     //call this function
         }
+
+        //worldDeltaPosition = NPCMesh.nextPosition - transform.position;
+
+        //if (worldDeltaPosition.magnitude > NPCMesh.radius)
+        //    NPCMesh.nextPosition = transform.position + 0.9f * worldDeltaPosition;
+        
+       // NPCMesh.SetDestination(target.position);
     }
 
     private void OnTriggerEnter(Collider other)
