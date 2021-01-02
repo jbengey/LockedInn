@@ -5,21 +5,24 @@
 
 ## Website
 This project has an official webpage which contains more of an overview of the pub itself alongside screenshots and gameplay.
-<br><br>
+<br>
 [Visit Locked Inn Website]()
-<br><br>
+<br>
 This github readme is intended for developers and others wishing to fork.
-
+<br>
 ## Features
 * Full PBR rendered pub enviroment, classicaly themed with appropriate lighting and assets
-* Throwable glass with realistic shatter effects
-* Interactive NPC's
-* interactable dart board and darts
-
+* Throwable glass with realistic shatter effects on collision
+* Locomotion movement (left controller move, right controller to turn)
+* Functioning fruit machines
+* Interactable NPC's
+* Interactable dart board and darts
+* Working jukebox, with matching NPC dances
+* Outside area with cloudy skybox and foliage
 
 ## Release Information
 Current Version 1.0.0 - [Download]()
-<br><br>
+
 ### Tested with the following:
 * Unity 2019.4.16f1
 * Acer Mixed Reality Headset
