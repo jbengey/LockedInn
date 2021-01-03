@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8983047129835767541}
   - component: {fileID: 2934517661389387922}
   - component: {fileID: 1443612307030594457}
+  - component: {fileID: 815337807302880969}
+  - component: {fileID: 5257517045581279450}
   m_Layer: 0
   m_Name: picnic table
   m_TagString: Untagged
@@ -79,3 +81,29 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &815337807302880969
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6036505940584342069}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9200054, y: 0.89688027, z: 0.09635702}
+  m_Center: {x: 0.00000006960306, y: -1.2660411e-15, z: 0.22761028}
+--- !u!65 &5257517045581279450
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6036505940584342069}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9200054, y: 0.31805402, z: 0.03951712}
+  m_Center: {x: 0.00000006961625, y: -0.0002394693, z: 0.48127767}
