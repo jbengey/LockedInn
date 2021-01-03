@@ -6,7 +6,7 @@
 ## Website
 This project has an official webpage which contains more of an overview of the pub itself alongside screenshots and gameplay.
 <br>
-[Visit Locked Inn Website]()
+[Visit Locked Inn Website](https://jbengey.github.io/LockedInn/)
 <br>
 This github readme is intended for developers and others wishing to fork.
 <br>
