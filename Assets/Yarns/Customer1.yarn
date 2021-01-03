@@ -1,11 +1,28 @@
+  
 title: Customer1.Start
 tags: 
 colorID: 0
-position: 76,-176
+position: -206,-915
 ---
-Oh hello there!
+<<if $Cust1Vis is false>> 
 
-You must be new, I've never seen you before.
+Oh, hello there!
 
-What bring's you here?
+You must be new, I've never seen you before, it's cool right?
+
+Did you know that you can choose the music on the jukebox?
+
+Use the buttons on the front.
+
+Give it a try, the guys dancing like some variation sometimes!!
+
+<<set $Cust1Vis to true>> 
+
+<<elseif $Cust1Vis is true>>
+
+It looks like they liked your choice of music, haha!!
+
+Try something else! The song on the right button is the best, hehe!!
+
+<<endif>>
 ===
