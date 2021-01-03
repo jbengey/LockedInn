@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 610ef7aedb1445345a0cc7a9a2ad06a9
+<<<<<<<< HEAD:Assets/Audio.meta
+guid: a45ebfa2da01642409ac2feb259969bf
+========
+guid: 497e32ead4bb9a24f814406a1bfd2249
+>>>>>>>> main:Assets/Characters.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 655439124078495333}
   - component: {fileID: 4519166497504397760}
   - component: {fileID: 1825007562958339338}
+  - component: {fileID: 2122489521471672342}
+  - component: {fileID: 3913882005977490733}
   m_Layer: 0
   m_Name: viennese_chair
   m_TagString: Untagged
@@ -79,3 +81,29 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &2122489521471672342
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167555426154962143}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.004509745, y: 0.0043664076, z: 0.0045183524}
+  m_Center: {x: 1.4901161e-10, y: -0.0003818594, z: 0.0022591776}
+--- !u!65 &3913882005977490733
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167555426154962143}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.004509745, y: 0.0016307351, z: 0.0045274887}
+  m_Center: {x: 1.4901161e-10, y: 0.0017881343, z: 0.006681432}
