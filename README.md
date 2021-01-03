@@ -1,7 +1,7 @@
 # Locked Inn
 ![Logo](https://github.com/jbengey/LockedInn/blob/main/Assets/Brand/LockedInnGithubScreenshot.png?raw=true)
 <br>
-<p align="center"> Locked Inn is a VR pub experience created to allow individuals to feel immersed in a pub enviroment, as covid restirctions (lock down) don't allow them to do so in person.</p>
+<p align="center"> Locked Inn is a VR pub experience created to allow individuals to feel immersed in a pub environment, as covid-19 restrictions (lock down) don't allow them to do so in person.</p>
 
 ## Website
 This project has an official webpage which contains more of an overview of the pub itself alongside screenshots and gameplay.
