@@ -4,6 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - XRPlayer
+  - Terrain
+  - NPC
+  - FMButton
   - Dart
   layers:
   - Default
