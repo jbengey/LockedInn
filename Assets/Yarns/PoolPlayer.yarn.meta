@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 68f3001c138fb224ab71ceb17602ffc8
+guid: 964bbcf0b75c3ae4699d8ee18e1cde85
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -10,12 +10,19 @@ ScriptedImporter:
   script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
   baseLanguageID: en-GB
   stringIDs:
-  - PoolPlayer-PoolPlayer.Start-0
-  - PoolPlayer-PoolPlayer.Start-1
-  - PoolPlayer-PoolPlayer.Start-2
+  - NewFile (4)-PoolPlayer.Start-0
+  - NewFile (4)-PoolPlayer.Start-1
+  - NewFile (4)-PoolPlayer.Start-2
+  - NewFile (4)-PoolPlayer.Start-3
+  - NewFile (4)-PoolPlayer.Start-4
+  - NewFile (4)-PoolPlayer.Start-5
+  - NewFile (4)-PoolPlayer.Start-6
+  - NewFile (4)-Pool.yes-7
+  - NewFile (4)-Pool.yes-8
+  - NewFile (4)-Pool.no-9
   compilationStatus: 1
   isSuccesfullyCompiled: 1
   compilationErrorMessage: 
-  baseLanguage: {fileID: 7128917941130120860, guid: 68f3001c138fb224ab71ceb17602ffc8,
+  baseLanguage: {fileID: 7128917941130120860, guid: 964bbcf0b75c3ae4699d8ee18e1cde85,
     type: 3}
   localizations: []

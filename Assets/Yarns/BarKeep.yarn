@@ -1,9 +1,70 @@
 title: BarKeep.Start
 tags: 
 colorID: 0
-position: 76,-176
+position: -116,-778
 ---
-Welcome to the pub!
+<<if $BKSpoke is true>>
 
-My name is O'Malley, what'll it be?
+Welcome back!
+
+Sorry, but there is still nothing to drink right now.
+
+I don't think I can restock today.
+
+Is there anything else I can help you with?
+
+<<if $TVOn is 0>> 
+
+[[ Can you turn off the TV please?|TVOff.BK]]
+[[ No, I'm good thanks|Nothing.BK]]
+
+<<elseif $TVOn is 1>>
+
+[[ Can you put the football back on please?|TVOn.BK]]
+[[ No, that's alright thanks|Nothing.BK]]
+
+<<endif>> 
+
+<<elseif $BKSpoke is false>>
+
+<<set $TVOn to 0>>
+
+Hi! Welcome to the Locked Inn, I'm O'Malley!
+
+I'm really sorry, but these guys have been here all day and drunk the bar dry!!
+
+Please try and enjoy the rest of the pub, we've got the football on...
+
+...there's darts in the corner and you can try your luck on the fruit machines as well.
+
+Let me know if I can help with anything else!!
+
+<<set $BKSpoke to true>> 
+
+<<endif>>
+===
+title: TVOff.BK
+tags: 
+colorID: 0
+position: -408,-622
+---
+No problem, can do!
+
+<<set $TVOn to 1>>
+===
+title: TVOn.BK
+tags: 
+colorID: 0
+position: -159,-279
+---
+Sure, if you like!
+
+<<set $TVOn to 0>>
+===
+title: Nothing.BK
+tags: 
+colorID: 0
+position: 257,-638
+---
+No bother, be sure to let me know if I can help!
 ===

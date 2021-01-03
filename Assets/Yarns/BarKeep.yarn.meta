@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b9932b373be702145926d56b51773354
+guid: bbcf33c32a9193c42a192931f3ac284c
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -8,12 +8,27 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
-  baseLanguageID: 
+  baseLanguageID: en-GB
   stringIDs:
-  - BarKeep-BarKeep.Start-0
-  - BarKeep-BarKeep.Start-1
+  - NewFile-BarKeep.Start-0
+  - NewFile-BarKeep.Start-1
+  - NewFile-BarKeep.Start-2
+  - NewFile-BarKeep.Start-3
+  - NewFile-BarKeep.Start-4
+  - NewFile-BarKeep.Start-5
+  - NewFile-BarKeep.Start-6
+  - NewFile-BarKeep.Start-7
+  - NewFile-BarKeep.Start-8
+  - NewFile-BarKeep.Start-9
+  - NewFile-BarKeep.Start-10
+  - NewFile-BarKeep.Start-11
+  - NewFile-BarKeep.Start-12
+  - NewFile-TVOff.BK-13
+  - NewFile-TVOn.BK-14
+  - NewFile-Nothing.BK-15
   compilationStatus: 1
   isSuccesfullyCompiled: 1
   compilationErrorMessage: 
-  baseLanguage: {instanceID: 0}
+  baseLanguage: {fileID: 7128917941130120860, guid: bbcf33c32a9193c42a192931f3ac284c,
+    type: 3}
   localizations: []
