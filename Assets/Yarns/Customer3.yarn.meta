@@ -8,12 +8,13 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
-  baseLanguageID: 
+  baseLanguageID: en-GB
   stringIDs:
   - Customer3-Customer3.Start-0
   - Customer3-Customer3.Start-1
   compilationStatus: 1
   isSuccesfullyCompiled: 1
   compilationErrorMessage: 
-  baseLanguage: {instanceID: 0}
+  baseLanguage: {fileID: 7128917941130120860, guid: 1a4f093d8d4947946b679f7be831e77a,
+    type: 3}
   localizations: []

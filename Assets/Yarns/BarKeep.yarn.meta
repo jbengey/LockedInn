@@ -8,12 +8,27 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
-  baseLanguageID: 
+  baseLanguageID: en-GB
   stringIDs:
   - BarKeep-BarKeep.Start-0
   - BarKeep-BarKeep.Start-1
+  - BarKeep-BarKeep.Start-2
+  - BarKeep-BarKeep.Start-3
+  - BarKeep-BarKeep.Start-4
+  - BarKeep-BarKeep.Start-5
+  - BarKeep-BarKeep.Start-6
+  - BarKeep-BarKeep.Start-7
+  - BarKeep-BarKeep.Start-8
+  - BarKeep-BarKeep.Start-9
+  - BarKeep-BarKeep.Start-10
+  - BarKeep-BarKeep.Start-11
+  - BarKeep-BarKeep.Start-12
+  - BarKeep-TVOff.BK-13
+  - BarKeep-TVOn.BK-14
+  - BarKeep-Nothing.BK-15
   compilationStatus: 1
   isSuccesfullyCompiled: 1
   compilationErrorMessage: 
-  baseLanguage: {instanceID: 0}
+  baseLanguage: {fileID: 7128917941130120860, guid: b9932b373be702145926d56b51773354,
+    type: 3}
   localizations: []

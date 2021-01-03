@@ -8,12 +8,21 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
-  baseLanguageID: 
+  baseLanguageID: en-GB
   stringIDs:
-  - DartPlayer1-DartPlayer1.Start-0
-  - DartPlayer1-DartPlayer1.Start-1
+  - DartPlayer1-PoolPlayer.Start-0
+  - DartPlayer1-PoolPlayer.Start-1
+  - DartPlayer1-PoolPlayer.Start-2
+  - DartPlayer1-PoolPlayer.Start-3
+  - DartPlayer1-PoolPlayer.Start-4
+  - DartPlayer1-PoolPlayer.Start-5
+  - DartPlayer1-PoolPlayer.Start-6
+  - DartPlayer1-Pool.yes-7
+  - DartPlayer1-Pool.yes-8
+  - DartPlayer1-Pool.no-9
   compilationStatus: 1
   isSuccesfullyCompiled: 1
   compilationErrorMessage: 
-  baseLanguage: {instanceID: 0}
+  baseLanguage: {fileID: 7128917941130120860, guid: c251c77465f59a84bab8c9898261f3f7,
+    type: 3}
   localizations: []

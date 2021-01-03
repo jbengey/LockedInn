@@ -1,44 +1,10 @@
-title: PoolPlayer.Start
+  
+title: DartPlayer1.Start
 tags: 
 colorID: 0
-position: -78,-627
+position: 76,-176
 ---
-<<if $PoolVis is false>> 
+Hey, you think you can beat my high score?
 
-Hey man, what's up?
-
-I'd love to give you a game of pool, but someone stole all the balls...
-
-It's a real shame, because you look like a good player!
-
-I'll bring my ones from home tomorrow, if you think you're going to be here?
-
-[[ Sure, that sounds great!|Pool.yes]]
-[[ Probably not to be honest...|Pool.no]]
-
-<<elseif $PoolVis is true>>
-
-Hey dude, I still haven't got my balls, come see me tomorrow!!
-
-<<endif>>
-===
-title: Pool.yes
-tags: 
-colorID: 0
-position: -250,-335
----
-Awesome! I'm looking forward to it!!
-
-See you tomorrow then!!
-
-<<set $PoolVis to true>>
-===
-title: Pool.no
-tags: 
-colorID: 0
-position: 138,-336
----
-No worries man, maybe another time...
-
-<<set $PoolVis to true>>
+We'll see about that!
 ===
