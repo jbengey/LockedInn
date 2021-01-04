@@ -12,7 +12,7 @@ public class NPC3D : MonoBehaviour
     DialogueRunner dialogueRunner; //refernce to the dialogue control
     private GameObject dialogueCanavas; //refernce to the canvas
     public GameObject NPC;                                              //GameObject of Keeper
-    private Vector3 PostionSpeechBubble = new Vector3(0f, 1.25f, 0f);
+    private Vector3 PostionSpeechBubble = new Vector3(0f, 1.1f, 0f);
     private Vector3 ResetSpeechBubble = new Vector3(0f, -5f, 0f);     //Vector3 to reset canvas location 
     private Vector3 NPCRoatation;                                       //Vector3 for the Keeper roation
 
