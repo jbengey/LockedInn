@@ -32,13 +32,13 @@ Current Version 1.0.0 - [Download]()
 * 16GB Ram
 
 ### Credits
-Dart board: 	https://www.cgtrader.com/free-3d-models/sports/game/dart-2696c384-8e74-4b16-bdd6-7298c2c  
-Smash glass Sound: 	https://freesound.org/people/kyles/sounds/450780/ 
-Jack Daniels Bottle:	 https://www.cgtrader.com/free-3d-models/food/miscellaneous/jack-daniels-cec3a2a4-5668-48a 
-Beer mug: 	https://www.cgtrader.com/free-3d-models/interior/kitchen/beer-cup 
-Wooden Chair: 	https://www.cgtrader.com/free-3d-models/furniture/chair/viennese-chair-e8240e9b-6e7d-4461-b51 
-Dart sound: 	https://freesound.org/people/tonnonic/sounds/332201/ 
-Sofa: 	https://www.cgtrader.com/free-3d-models/furniture/sofa/old-leather-sofa-1de82808-8e70-4c59-870 
-Wooden table: 	https://www.cgtrader.com/free-3d-models/furniture/table/wooden-coffee-tea-table 
-Ceiling light: 	https://www.cgtrader.com/free-3d-models/various/various-models/lamp-63-am152 
-Wooden light: 	https://www.cgtrader.com/free-3d-models/furniture/lamp/light--3 
+Dart board: 	https://www.cgtrader.com/free-3d-models/sports/game/dart-2696c384-8e74-4b16-bdd6-7298c2c  <br>
+Smash glass Sound: 	https://freesound.org/people/kyles/sounds/450780/ <br>
+Jack Daniels Bottle:	 https://www.cgtrader.com/free-3d-models/food/miscellaneous/jack-daniels-cec3a2a4-5668-48a <br>
+Beer mug: 	https://www.cgtrader.com/free-3d-models/interior/kitchen/beer-cup <br>
+Wooden Chair: 	https://www.cgtrader.com/free-3d-models/furniture/chair/viennese-chair-e8240e9b-6e7d-4461-b51 <br>
+Dart sound: 	https://freesound.org/people/tonnonic/sounds/332201/ <br>
+Sofa: 	https://www.cgtrader.com/free-3d-models/furniture/sofa/old-leather-sofa-1de82808-8e70-4c59-870 <br>
+Wooden table: 	https://www.cgtrader.com/free-3d-models/furniture/table/wooden-coffee-tea-table <br>
+Ceiling light: 	https://www.cgtrader.com/free-3d-models/various/various-models/lamp-63-am152 <br>
+Wooden light: 	https://www.cgtrader.com/free-3d-models/furniture/lamp/light--3 <br>
