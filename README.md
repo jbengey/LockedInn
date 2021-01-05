@@ -30,3 +30,15 @@ Current Version 1.0.0 - [Download]()
 * NVIDIA GTX 1070
 * Intel I7-7700HQ
 * 16GB Ram
+
+### Credits
+Dart board: 	https://www.cgtrader.com/free-3d-models/sports/game/dart-2696c384-8e74-4b16-bdd6-7298c2c  
+Smash glass Sound: 	https://freesound.org/people/kyles/sounds/450780/ 
+Jack Daniels Bottle:	 https://www.cgtrader.com/free-3d-models/food/miscellaneous/jack-daniels-cec3a2a4-5668-48a 
+Beer mug: 	https://www.cgtrader.com/free-3d-models/interior/kitchen/beer-cup 
+Wooden Chair: 	https://www.cgtrader.com/free-3d-models/furniture/chair/viennese-chair-e8240e9b-6e7d-4461-b51 
+Dart sound: 	https://freesound.org/people/tonnonic/sounds/332201/ 
+Sofa: 	https://www.cgtrader.com/free-3d-models/furniture/sofa/old-leather-sofa-1de82808-8e70-4c59-870 
+Wooden table: 	https://www.cgtrader.com/free-3d-models/furniture/table/wooden-coffee-tea-table 
+Ceiling light: 	https://www.cgtrader.com/free-3d-models/various/various-models/lamp-63-am152 
+Wooden light: 	https://www.cgtrader.com/free-3d-models/furniture/lamp/light--3 
