@@ -1,2 +1,3 @@
 # LockedInn
-This branch handles the simple webpage for the project.
+This branch handles the simple webpage for the project. 
+Using github-pages.
