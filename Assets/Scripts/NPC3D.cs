@@ -70,8 +70,12 @@ public class NPC3D : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        dialogueCanavas.transform.SetParent(transform.parent.transform); // use the root to prevent scaling
-        dialogueCanavas.GetComponent<RectTransform>().anchoredPosition3D = transform.parent.TransformVector(ResetSpeechBubble);     //ensures dialougue canvas is hidden when not in use
+        if (other.gameObject.CompareTag("XRPlayer"))
+        {
+            dialogueCanavas.transform.SetParent(transform.parent.transform); // use the root to prevent scaling
+            dialogueCanavas.GetComponent<RectTransform>().anchoredPosition3D = transform.parent.TransformVector(ResetSpeechBubble);     //ensures dialougue canvas is hidden when not in use
+
+        }
     }
 
 }
