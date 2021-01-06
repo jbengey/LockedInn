@@ -55,7 +55,9 @@ FM Symbols - https://blogs.glowscotland.org.uk/glowblogs/njoldfieldeportfolio1/2
 Animations - https://www.mixamo.com/#/ <br>
 
 
-
+<br><br>
+[![DOI](https://zenodo.org/badge/321153417.svg)](https://zenodo.org/badge/latestdoi/321153417)
+<br>
 
 
 
