@@ -25,7 +25,6 @@ Current Version 1.0.0 - [Download]()
 
 ### Tested with the following:
 * Unity 2019.4.16f1
-* Universal render pipeline
 * Acer Mixed Reality Headset
 * NVIDIA GTX 1070
 * Intel I7-7700HQ
