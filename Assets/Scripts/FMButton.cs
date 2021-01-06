@@ -4,33 +4,33 @@ using UnityEngine;
 
 public class FMButton : MonoBehaviour
 {
-    public GameObject button;
-    public bool buttonPressed;
-    public Material on, off;
+    public GameObject button;           //referencess game object for the button
+    public bool buttonPressed;          //creates a bool
+    public Material on, off;            //references materials
 
     private void Start()
     {
-        button.GetComponent<MeshRenderer>().material = off;
-        buttonPressed = false;
+        button.GetComponent<MeshRenderer>().material = off;     //sets to the off material at start
+        buttonPressed = false;                                  //sets bool to false
     }
 
     private void Update()
     {
-        if (buttonPressed)
+        if (buttonPressed)                                          //if true...
         {
-            button.GetComponent<MeshRenderer>().material = on;
+            button.GetComponent<MeshRenderer>().material = on;      //set to on material
         }
-        else
+        else                                                        //if not...
         {
-            button.GetComponent<MeshRenderer>().material = off;
+            button.GetComponent<MeshRenderer>().material = off;     //set to off material
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("XRPlayer") | other.gameObject.layer == LayerMask.NameToLayer("Body") | other.gameObject.layer == LayerMask.NameToLayer("Grab"))
+        if(other.gameObject.CompareTag("XRPlayer") | other.gameObject.layer == LayerMask.NameToLayer("Body") | other.gameObject.layer == LayerMask.NameToLayer("Grab"))     //checks colliding game object is VR hands
         {
-            buttonPressed = true;
+            buttonPressed = true;       //set bool to true
         }
     }
 
@@ -38,9 +38,9 @@ public class FMButton : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("XRPlayer") | other.gameObject.layer == LayerMask.NameToLayer("Body") | other.gameObject.layer == LayerMask.NameToLayer("Grab"))
+        if (other.gameObject.CompareTag("XRPlayer") | other.gameObject.layer == LayerMask.NameToLayer("Body") | other.gameObject.layer == LayerMask.NameToLayer("Grab"))    //checks colliding game object is VR hands
         {
-            buttonPressed = false;
+            buttonPressed = false;      //set bool false
         }
 
     }

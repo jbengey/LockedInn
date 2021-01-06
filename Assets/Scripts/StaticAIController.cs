@@ -36,32 +36,37 @@ public class StaticAIController : MonoBehaviour
         {
             TurnBack();                     //call this function
         }
-
-        //worldDeltaPosition = NPCMesh.nextPosition - transform.position;
-
-        //if (worldDeltaPosition.magnitude > NPCMesh.radius)
-        //    NPCMesh.nextPosition = transform.position + 0.9f * worldDeltaPosition;
-        
-       // NPCMesh.SetDestination(target.position);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        playerIsHere = true;                            //changes bool to true
-        RotateTowardsPlayer();                          //calls this function
-        NPCAni.SetBool("PlayerIsHere", true);           //changes animator bool to true
+        if (other.gameObject.CompareTag("XRPlayer"))
+        {
+            playerIsHere = true;                            //changes bool to true
+            RotateTowardsPlayer();                          //calls this function
+            NPCAni.SetBool("PlayerIsHere", true);           //changes animator bool to true
+
+        }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        RotateTowardsPlayer();                          //ensures function still applies whilst staying within trigger
+        if (other.gameObject.CompareTag("XRPlayer"))
+        {
+            RotateTowardsPlayer();                          //ensures function still applies whilst staying within trigger
+
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        playerIsHere = false;                           //sets bool to false
-        NPCAni.SetBool("PlayerIsHere", false);          //sets animator bool to false, starting new animation   
-        turnBack = true;                                //sets bool to true
+        if (other.gameObject.CompareTag("XRPlayer"))
+        {
+            playerIsHere = false;                           //sets bool to false
+            NPCAni.SetBool("PlayerIsHere", false);          //sets animator bool to false, starting new animation   
+            turnBack = true;                                //sets bool to true
+
+        }
     }
 
     private void RotateTowardsPlayer()

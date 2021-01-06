@@ -51,33 +51,45 @@ public class BarKeepAIController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        StopNotNeededAnis();                            //call this funstion
-        NPCMesh.isStopped = true;                       //sets this bool/internal funstion to true
-        playerIsHere = true;                            //changes bool to true
-        NPCAni.SetBool("PlayerIsHere", true);           //changes animator bool to true, starting transition
+        if (other.gameObject.CompareTag("XRPlayer"))
+        {
+            StopNotNeededAnis();                            //call this funstion
+            NPCMesh.isStopped = true;                       //sets this bool/internal funstion to true
+            playerIsHere = true;                            //changes bool to true
+            NPCAni.SetBool("PlayerIsHere", true);           //changes animator bool to true, starting transition
+
+        }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        NPCMesh.isStopped = true;                       //ensures this stays true whilst staying in the trigger
+        if (other.gameObject.CompareTag("XRPlayer"))
+        {
+            NPCMesh.isStopped = true;                       //ensures this stays true whilst staying in the trigger
+
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        playerIsHere = false;                          //sets bool to false
-        NPCAni.SetBool("PlayerIsHere", false);         //sets animator bool to false, starting new animation   
-        NPCMesh.isStopped = false;                     //sets bool back to false on exit, allowing NMA to move again
-
-        if (Vector3.Distance(NPCMesh.destination, NPCMesh.transform.position) <= 0.5f && playerIsHere == false)         //compares NMA location and target location, and if less than or equal to 1 distance away AND bool is false...
+        if (other.gameObject.CompareTag("XRPlayer"))
         {
-            StartCoroutine(WaitAtEnd());                                                                                //call this co routine
-            NPCMesh.SetDestination(target1.position);                                                                   //change to target1
 
+            playerIsHere = false;                          //sets bool to false
+            NPCAni.SetBool("PlayerIsHere", false);         //sets animator bool to false, starting new animation   
+            NPCMesh.isStopped = false;                     //sets bool back to false on exit, allowing NMA to move again
 
-            if (Vector3.Distance(NPCMesh.destination, NPCMesh.transform.position) <= 0.5f && playerIsHere == false)     //compares NMA location and target location, and if less than or equal to 1 distance away AND bool is false...
+            if (Vector3.Distance(NPCMesh.destination, NPCMesh.transform.position) <= 0.5f && playerIsHere == false)         //compares NMA location and target location, and if less than or equal to 1 distance away AND bool is false...
             {
-                StartCoroutine(WaitAtEnd());                                                                            //call this co routine
-                NPCMesh.SetDestination(target2.position);                                                               //change to target2
+                StartCoroutine(WaitAtEnd());                                                                                //call this co routine
+                NPCMesh.SetDestination(target1.position);                                                                   //change to target1
+
+
+                if (Vector3.Distance(NPCMesh.destination, NPCMesh.transform.position) <= 0.5f && playerIsHere == false)     //compares NMA location and target location, and if less than or equal to 1 distance away AND bool is false...
+                {
+                    StartCoroutine(WaitAtEnd());                                                                            //call this co routine
+                    NPCMesh.SetDestination(target2.position);                                                               //change to target2
+                }
             }
         }
     }
