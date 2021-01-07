@@ -25,6 +25,9 @@ There is a supplementary document describing the marketing and media implementat
 <br>
 [View Document](https://github.com/jbengey/LockedInn/blob/main/Assignment%206%20Blue%20Group%20Locked%20Inn.pdf)
 <br>
+## Youtube Video
+[Watch](https://youtu.be/lkHlNDe5y14)
+<br>
 
 ## Release Information
 Current Version 1.1.0 - [Download](https://github.com/jbengey/LockedInn/releases/download/v1.1.0/Locked.Inn.VR.-.V1.1.0.zip)
@@ -57,7 +60,7 @@ Juke Box irish - https://www.youtube.com/watch?v=SBATrLRWySg&ab_channel=PatrickW
 TV footage - https://www.youtube.com/watch?v=lrA_9Lx-0nU&t=74s&ab_channel=ChelseaFootballClub <br>
 TV model - https://assetstore.unity.com/packages/3d/props/electronics/wall-tvset-8468 <br>
 NPC models - https://github.com/microsoft/Microsoft-Rocketbox <br>
-Slot MAchine Symbols - https://blogs.glowscotland.org.uk/glowblogs/njoldfieldeportfolio1/2015/11/29/slot-machi<br>
+Slot Machine Symbols - https://blogs.glowscotland.org.uk/glowblogs/njoldfieldeportfolio1/2015/11/29/slot-machi<br>
 Animations - https://www.mixamo.com/#/ <br>
 Skybox - https://assetstore.unity.com/packages/2d/textures-materials/sky/skybox-series-free-103633 
 
