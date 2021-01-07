@@ -27,7 +27,7 @@ There is a supplementary document describing the marketing and media implementat
 <br>
 
 ## Release Information
-Current Version 1.0.0 - [Download](https://github.com/jbengey/LockedInn/releases/download/v1.0.0/Locked.Inn.VR.-.V1.0.0.zip)
+Current Version 1.0.0 - [Download](https://github.com/jbengey/LockedInn/releases/download/v1.1.0/Locked.Inn.VR.-.V1.1.0.zip)
 
 ### Tested with the following:
 * Unity 2019.4.16f1
@@ -59,7 +59,7 @@ TV model - https://assetstore.unity.com/packages/3d/props/electronics/wall-tvset
 NPC models - https://github.com/microsoft/Microsoft-Rocketbox <br>
 FM Symbols - https://blogs.glowscotland.org.uk/glowblogs/njoldfieldeportfolio1/2015/11/29/slot-machi<br>
 Animations - https://www.mixamo.com/#/ <br>
-
+Skybox - https://assetstore.unity.com/packages/2d/textures-materials/sky/skybox-series-free-103633 
 
 <br><br>
 [![DOI](https://zenodo.org/badge/321153417.svg)](https://zenodo.org/badge/latestdoi/321153417)
