@@ -20,6 +20,12 @@ This github readme is intended for developers and others wishing to fork.
 * Working jukebox, with matching NPC dances
 * Outside area with cloudy skybox and foliage
 
+## Marketing & Media Theory
+There is a supplementary document describing the marketing and media implementation for this project.
+<br>
+[View Document](https://github.com/jbengey/LockedInn/blob/main/Assignment%206%20Blue%20Group%20Locked%20Inn.pdf)
+<br>
+
 ## Release Information
 Current Version 1.0.0 - [Download](https://github.com/jbengey/LockedInn/releases/download/v1.0.0/Locked.Inn.VR.-.V1.0.0.zip)
 
