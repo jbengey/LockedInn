@@ -27,7 +27,7 @@ There is a supplementary document describing the marketing and media implementat
 <br>
 
 ## Release Information
-Current Version 1.0.0 - [Download](https://github.com/jbengey/LockedInn/releases/download/v1.1.0/Locked.Inn.VR.-.V1.1.0.zip)
+Current Version 1.1.0 - [Download](https://github.com/jbengey/LockedInn/releases/download/v1.1.0/Locked.Inn.VR.-.V1.1.0.zip)
 
 ### Tested with the following:
 * Unity 2019.4.16f1
